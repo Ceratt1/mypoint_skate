@@ -1,5 +1,6 @@
 package com.br.mypoint.mypoint_skate.domain.models;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,8 +21,10 @@ public class Role {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column (name = "role_id")
-    private long id;
+    private Integer  id;
 
+
+    @Column(nullable = false, length = 50, unique=true)
     private String role;
 
 

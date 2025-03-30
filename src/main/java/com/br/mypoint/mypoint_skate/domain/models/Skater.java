@@ -1,7 +1,6 @@
 package com.br.mypoint.mypoint_skate.domain.models;
 
 import java.util.Set;
-import java.util.UUID;
 
 import org.hibernate.annotations.ManyToAny;
 
@@ -29,7 +28,7 @@ public class Skater {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "skater_id")
-    private UUID id;
+    private Integer id;
     
     @Column(nullable = false, length = 50, unique=true)
     private String username;
