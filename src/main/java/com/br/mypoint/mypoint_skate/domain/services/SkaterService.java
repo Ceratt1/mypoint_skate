@@ -1,13 +1,15 @@
 package com.br.mypoint.mypoint_skate.domain.services;
 
 
-import com.br.mypoint.mypoint_skate.domain.models.Skater;
+import org.springframework.http.ResponseEntity;
+
 import com.br.mypoint.mypoint_skate.presentations.requests.LoginRequest;
+import com.br.mypoint.mypoint_skate.presentations.responses.LoginResponse;
 
 public interface SkaterService {
 
 
-    Skater findByEmail(LoginRequest username);
+    ResponseEntity<LoginResponse> findByUsername(LoginRequest username);
 
 
 }
