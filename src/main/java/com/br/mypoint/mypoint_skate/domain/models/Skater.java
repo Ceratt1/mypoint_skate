@@ -3,6 +3,9 @@ package com.br.mypoint.mypoint_skate.domain.models;
 import java.util.Set;
 
 import org.hibernate.annotations.ManyToAny;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.br.mypoint.mypoint_skate.presentations.requests.LoginRequest;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -44,6 +47,11 @@ public class Skater {
 
     @OneToMany(mappedBy = "creator", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Point> points;
+
+    public boolean LoginCorret(LoginRequest loginRequest, PasswordEncoder passwordEncoder) {
+        return passwordEncoder.matches( loginRequest.password(), this.password); 
+
+    }
 
 
 }
